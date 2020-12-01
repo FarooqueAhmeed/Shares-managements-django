@@ -4,7 +4,7 @@ from django.urls import path,include
 from Shares.Shares.views import index
 
 urlpatterns = [
-   # path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('',index, name='index'),
     path(r"accounts/", include("users.urls")),
     path("",include("Shares.Shares.urls")),
