@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+    {% block title %}
+<title>Edit Task- Taskmate</title>
+      {% endblock title %}
+
+
+ {% block content %}
+   <div class="container">
+
+
+      <br>
+      <form action="{{ edit_share }}" method="POST">
+              {% csrf_token %}
+           <div class="form-group">
+                <input type="text" class="form-control" name="name" placeholder="{{ share.name}}" value="{{ share.name }}">
+                 <input type="text" class="form-control" name="ticker" placeholder="{{ share.ticker}}" value="{{ share.ticker }}">
+                 <input type="text" class="form-control" name="name" placeholder="{{ share.buy_price}}" value="{{ share.buy_price }}">
+                  <input type="text" class="form-control" name="name" placeholder="{{ share.number_of_shares}}" value="{{ share.number_of_shares }}">
+
+           </div>
+              <button type="submit" class="btn btn-primary">Update share</button>
+      </form>
+
+
+
+  </div>
+  {% endblock content %}

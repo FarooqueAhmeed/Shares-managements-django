@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+    {% block title %}
+<title>Edit Task- Taskmate</title>
+      {% endblock title %}
+
+
+ {% block content %}
+
+
+
+    <div class="container">
+
+
+    <h2>Create</h2>
+
+    {% if error %}
+        <div><font color="red">{{ error }}</font></div>
+        <br>
+    {% endif %}
+
+    <form action="{% url 'add_shares' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <input class="form-control" autofocus type="text" name="name" placeholder="Name">
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="text" name="ticker" placeholder="ticker">
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="number" name="buy_price" placeholder="Buy price">
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="number" name="number_of_shares" placeholder="Number of shares">
+        </div>
+
+        <input class="btn btn-primary" type="submit" value="Submit">
+    </form>
+</div>
+
+
+
+
+
+
+  {% endblock content %}
