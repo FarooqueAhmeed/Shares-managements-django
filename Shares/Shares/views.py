@@ -36,6 +36,7 @@ def add_shares(request):
                 "message": "User not logged in."
             })
     if request.method == "POST":
+
         # Read UI parameters
         name = request.POST["name"]
         ticker = request.POST["ticker"]
@@ -43,12 +44,18 @@ def add_shares(request):
         number_of_shares = request.POST["number_of_shares"]
 
 
+
+
         # Create listing
         response = Shares.objects.create(
             name=name,
             ticker=ticker,
             buy_price= buy_price,
-            number_of_shares=number_of_shares,)
+            number_of_shares=number_of_shares,
+
+
+        )
+
 
 
 
